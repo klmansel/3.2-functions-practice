@@ -10,6 +10,8 @@
   console.log(max(21,3));
   console.log(max(13,134));
 
+//Alt solution
+
 
   // ---------------------
   // Define a function maxOfThree() that takes three numbers as arguments and returns the largest of them.
@@ -42,15 +44,25 @@ console.log(isVowel('a'));
 console.log(isVowel('r'));
 console.log(isVowel('y'));
 
-
+// function isVowel(char){
+//   return 'aeiou'.indexOf(char) !== -1;
 // ---------------------
 // Write a function rovarspraket() that will translate a text into "rövarspråket". That is, double every consonant and place an occurrence of "o" in between. For example, translate("this is fun") should return the string "tothohisos isos fofunon".
 // --
 
-
+// function rovarspraket(phrase){
+//   for (var i=o; i<phrase.length; i++){
+//     var char = phrase[i];
+//     if(isVowel(char))
+//   }
+//   return translation;
+//
+// }
+// console.assert(rovarspraket('this is fun') == 'tothohisos isos fofunon');
 // ---------------------
 // Define a function sum() and a function multiply() that sums and multiplies (respectively) all the numbers in an array of numbers. For example, sum([1,2,3,4]) should return 10, and multiply([1,2,3,4]) should return 24.
 // ---------------------
+
 
 var myNumbers = [12, 13, 10];
 
@@ -85,17 +97,17 @@ console.log(reverse('engineer'));
 // Write a function findLongestWord() that takes an array of words and returns the length of the longest one.
 // ---------------------Returning a value 1 number off
 var myWords = ['frog', 'cat','dog','elephant'];
-var longestWord = 0;
+var longestWord = [];
 
 function findLongestWord(words){
   for (var i=0; i < words.length; i++) {
-    if (words[i].length > longestWord) {
-      longestWord = words[i].length;
+    if (words.length > longestWord) {
+      longestWord = words.length;
     }
     return longestWord;
   }
 }
-console.assert(findLongestWord(['rabbit','parrot','triceratops']));
+console.assert(findLongestWord(['rabbit','parrot','triceratops']=== 11));
 console.log(findLongestWord(myWords));
 
 // ---------------------
@@ -103,11 +115,33 @@ console.log(findLongestWord(myWords));
 // ---------------------
 
 
+
 // ---------------------
 // Write a function charFreq() that takes a string and builds a frequency listing of the characters contained in it. Represent the frequency listing as a Javascript object. Try it with something like charFreq("abbabcbdbabdbdbabababcbcbab").
 // ---------------------
-//Try this:
+function charFreq(string){
+   var letters = string.split('');
+   var A = 0;
+   var B = 0;
+   var C = 0;
+   var D = 0;
 
-//jsfiddle.net/arcticmouse/ft4stqs7/
+   for(var i = 0; i < letters.length; i++){
+     if(letters[i] == 'a') {
+       A += 1;
+     } else if(letters[i] == 'b') {
+       B += 1;
+     } else if(letters[i] == 'c'){
+       C += 1;
+     } else {
+       D += 1;
+     }
+   }
+
+   console.log(A, B, C, D);
+   return A, B, C, D;
+
+}
+charFreq('abbabcbdbabdbdbabababcbcbab');
 
 }());
